@@ -12,7 +12,9 @@
     <div class="row">
       <div class="col-sm-8 col-12">
         <%= course.description %>
-        <%= course.image %>
+        <% if(course.image) then %>
+        <%= image_tag course.image.to_s %>
+        <% end %>
       </div>
       <div class="col-sm-4 col-12 text-center">
         <%= link_to 'More Details...', course_path(course), class: 'btn btn-primary btn-large' %>
